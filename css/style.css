@@ -51,7 +51,7 @@ body {
 @media only screen and (min-width: 768px) {
   .container {
     max-width: 738px;
-    padding: 0 84px;
+    padding: 0 16px;
   }
 }
 @media only screen and (min-width: 1158px) {
@@ -94,6 +94,7 @@ body {
 /* header */
 
 .header {
+  padding: 24px 0;
   border-bottom: 1px solid var(--border-color);
   box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08),
     0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
@@ -136,6 +137,7 @@ body {
   transition: color var(--animation);
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 .active {
   position: relative;
 }
@@ -152,20 +154,50 @@ body {
   border-radius: 4px;
 }
 
-.navigation-tools,
-.navigation {
-  display: flex;
-  align-items: center;
+.navigation,
+.adress {
+  display: none;
 }
-.navigation.list {
-  display: flex;
-  margin-left: 76px;
+.burger-btn {
+  width: 32px;
+  height: 22px;
+  border: transparent;
+  background-color: transparent;
 }
-.navigation-link.link {
-  display: block;
-  padding-top: 24px;
-  padding-bottom: 24px;
+
+/*  */
+
+@media only screen and (min-width: 768px) {
+  .navigation-tools,
+  .navigation {
+    display: flex;
+    align-items: center;
+  }
+  .navigation.list {
+    display: flex;
+    margin-left: 76px;
+  }
+  .navigation-link.link {
+    display: block;
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
+  .burger-btn {
+    display: none;
+  }
+  .header {
+    padding: 0;
+  }
+  .adress.list {
+    display: flex;
+    flex-direction: column;
+    margin-right: 0;
+  }
+  .adress-item {
+    margin-bottom: 12px;
+  }
 }
+
 .navigation-item:not(:last-child) {
   margin-right: 40px;
 }
@@ -219,20 +251,34 @@ body {
   max-width: 428px;
   margin-left: auto;
   margin-right: auto;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
   background-image: linear-gradient(
       rgba(46, 47, 66, 0.7),
       rgba(46, 47, 66, 0.7)
     ),
     url('../images/herofoto.jpg');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
 }
-@media only screen and (min-width: 768px) {
-  .hero {
-    max-width: 768px;
+
+@media (min-device-pixel-ratio: 2),
+  (min-resolution: 192dpi),
+  (min-resolution: 2dppx) {
+   {
   }
 }
+
+@media only screen and (min-width: 429px) {
+  .hero {
+    max-width: 768px;
+    background-image: linear-gradient(
+        rgba(46, 47, 66, 0.7),
+        rgba(46, 47, 66, 0.7)
+      ),
+      url('../images/herofoto.jpg');
+  }
+}
+
 .hero-title {
   color: var(--primiry-white-color);
   font-size: 36px;
