@@ -102,6 +102,12 @@ body {
 
 /*Navigation*/
 
+.navigation-tools {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .logo,
 .footer-logo {
   font-family: 'Raleway';
@@ -112,8 +118,6 @@ body {
   text-transform: uppercase;
   color: var(--main-text-color);
   text-decoration: none;
-  padding-top: 24px;
-  padding-bottom: 24px;
 }
 .accent {
   color: var(--button-color);
@@ -122,12 +126,15 @@ body {
   color: var(--active-color);
 }
 
-.navigation-link:hover,
-.navigation-link:focus {
+.navigation-link,
+.pages-link:hover,
+.navigation-link,
+.pages-link:focus {
   color: var(--active-color);
   background-color: var(--primiry-white-color);
 }
-.navigation-link {
+.navigation-link,
+.pages-link {
   font-weight: 500;
   line-height: 1.5;
   letter-spacing: 0.02em;
@@ -161,8 +168,9 @@ body {
 .burger-btn {
   width: 32px;
   height: 22px;
-  border: transparent;
+  border: none;
   background-color: transparent;
+  padding: 0;
 }
 
 /*  */
@@ -221,13 +229,82 @@ body {
   transition: color var(--animation);
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
-.adress-link:hover,
-.adress-link:focus {
+.adress-link,
+.pages-link,
+.mobile-menu-link:hover,
+.adress-link,
+.mobile-menu-link,
+.pages-link:focus {
   color: var(--active-color);
   background-color: var(--primiry-white-color);
 }
 .navigation-link.active {
   color: var(--active-color);
+}
+
+/**
+  |============================
+  | Mobile menu
+  |============================
+*/
+.mobile-menu-container {
+  position: relative;
+  padding-left: 40px;
+  padding-top: 24px;
+  padding-bottom: 40px;
+}
+.mobile-menu {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  max-height: 796px;
+  top: 0;
+  left: 0;
+  background-color: var(--primiry-white-color);
+  z-index: 1000;
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity linear var(--animation),
+    visibility linear var(--animation);
+}
+
+.mobile-menu.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.mobile-menu-btn {
+  position: absolute;
+  top: 24px;
+  right: 68px;
+  background-color: var(--primiry-white-color);
+  border-radius: 50%;
+  border-color: #8e8f994f;
+  cursor: pointer;
+}
+
+.mobile-menu-list,
+.mobile-menu-contact,
+.mobile-socials {
+  list-style: none;
+}
+.pages-link {
+  text-decoration: none;
+  color: var(--main-text-color);
+}
+.mobile-socials {
+  display: flex;
+  gap: 56px;
+}
+.mobile-socials:not(:first-child) {
+  margin-left: 56px;
+}
+.mobile-menu-link {
+  color: var(--second-text-color);
+  text-decoration: none;
 }
 /*Button*/
 
@@ -648,7 +725,8 @@ body {
   justify-content: center;
   gap: 24px;
 }
-.social-link {
+.social-link,
+.mobile-menu-social-link {
   width: 40px;
   height: 40px;
   background-color: var(--button-color);
@@ -663,8 +741,10 @@ body {
   transition: background-color var(--animation);
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
-.social-link:hover,
-.social-link:focus {
+.social-link,
+.mobile-menu-social-link:hover,
+.social-link,
+.mobile-menu-social-link:focus {
   background-color: var(--active-color);
   color: var(--primiry-white-color);
   border: transparent;
@@ -917,8 +997,8 @@ body {
 
   width: 398px;
   height: 40px;
-  padding: 10px 10px;
-  box-shadow: (0px 4px 4px rgba(0, 0, 0, 0.15));
+  padding: 10px 10px 10px 20px;
+  color: var(--modal-wndw-clr);
 }
 @media only screen and (min-width: 768px) {
   .footer-form-input {
@@ -1072,9 +1152,12 @@ body {
   border: none;
   cursor: pointer;
 }
-.closing:hover,
-.closing:focus {
+.closing,
+.mobile-menu-btn:hover,
+.closing,
+.mobile-menu-btn:focus {
   background-color: var(--active-color);
+  color: var(--modal-wndw-clr);
 }
 .modal-icon-close {
   fill: var(--main-text-color);
