@@ -123,13 +123,13 @@ body {
 .accent {
   color: var(--button-color);
 }
-.navigation-link:active {
+.navigation-link:active,
+.navigation-link:hover,
+.navigation-link:focus {
   color: var(--active-color);
 }
 
-.navigation-link,
 .pages-link:hover,
-.navigation-link,
 .pages-link:focus {
   color: var(--active-color);
   background-color: var(--primiry-white-color);
@@ -254,7 +254,8 @@ body {
 .mobile-menu-link,
 .pages-link,
 .mobile-menu-link,
-.pages-link:hover .mobile-menu-link,
+.pages-link:hover,
+.mobile-menu-link,
 .pages-link,
 .mobile-menu-link,
 .pages-link:focus {
@@ -305,9 +306,10 @@ body {
   right: 48px;
   background-color: var(--primiry-white-color);
   border-radius: 50%;
-  border-color: var(--border-color);
+  border: 1px solid var(--border-color);
   cursor: pointer;
   width: 24px;
+  height: 24px;
 }
 
 .mobile-menu-contact {
@@ -318,10 +320,15 @@ body {
 }
 .mbl-mn-font {
   font-weight: 700;
-  font-size: 36px;
+  font-size: 20px;
   line-height: 1.11;
   text-transform: capitalize;
   color: var(--button-color);
+}
+@media only screen and (min-width: 428px) {
+  .mbl-mn-font {
+    font-size: 36px;
+  }
 }
 
 .mobile-menu-list {
@@ -340,11 +347,18 @@ body {
   text-decoration: none;
   color: var(--main-text-color);
 }
+/* .pages-link:hover, */
+/* .pages-link:focus { */
+/* } */
 .mobile-socials {
   display: flex;
-  gap: 56px;
+  gap: 36px;
 }
-
+@media only screen and (min-width: 328px) {
+  .mobile-socials {
+    gap: 56px;
+  }
+}
 .mobile-menu-link {
   text-decoration: none;
 }
@@ -1181,26 +1195,24 @@ body {
   display: flex;
   align-items: center;
   flex-direction: row;
-  font-size: 12px;
+  font-size: 9px;
   line-height: 1.17px;
   color: #8e8f99;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.01em;
   margin-bottom: 4px;
   padding-left: 5px;
 }
 .label-name-checbox {
   display: flex;
+  align-items: center;
 }
 
 .accent-policy {
   color: var(--button-color);
-  font-size: 12px;
+  font-size: 10px;
   line-height: 1.17px;
-  letter-spacing: 0.04em;
-
-  display: inline-flex;
-  align-items: center;
-  padding-left: 5px;
+  letter-spacing: 0.01em;
+  margin-left: 5px;
 }
 .modal-comments {
   border: 1px solid rgba(0, 0, 0, 0.1);
@@ -1258,12 +1270,18 @@ body {
 }
 .title-check-box {
   padding-left: 8px;
-  font-size: 12px;
+  font-size: 9px;
   line-height: 1.17;
 
   color: #8e8f99;
 
-  letter-spacing: 0.04em;
+  letter-spacing: 0.01em;
+}
+@media only screen and (min-width: 768px) {
+  .title-check-box {
+    font-size: 12px;
+    letter-spacing: 0.04em;
+  }
 }
 .modal-chekbox-custom {
   display: inline-flex;
