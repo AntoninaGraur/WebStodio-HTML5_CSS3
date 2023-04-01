@@ -22,11 +22,10 @@
   <body>
     <header class="header">
       <div class="container navigation-tools">
+        <a class="logo navigation-tools" href="./portfolio.html"
+          ><p><span class="accent">WEB</span>STUDIO</p></a
+        >
         <nav class="navigation">
-          <a class="logo navigation-tools" href="./portfolio.html"
-            ><p><span class="accent">WEB</span>STUDIO</p></a
-          >
-
           <!--Navigation-->
 
           <ul class="navigation list">
@@ -58,13 +57,88 @@
             </li>
           </ul>
         </address>
+        <button class="burger-btn" type="button" data-menu-open>
+          <svg width="32" height="22">
+            <use
+              class="burger-icon"
+              href="./images/icons.svg#icon-svgburger"
+            ></use>
+          </svg>
+        </button>
+      </div>
+
+      <div class="mobile-menu" data-menu>
+        <div class="mobile-menu-container">
+          <button class="mobile-menu-btn" type="button" data-menu-close>
+            <svg class="mobile-icon-end" width="8" height="12">
+              <use href="./images/icons.svg#icon-close-black"></use>
+            </svg>
+          </button>
+          <div>
+            <ul class="mobile-menu-list">
+              <li class="mobile-menu-pages">
+                <a href="./index.html" class="pages-link">Studio</a>
+              </li>
+              <li class="mobile-menu-pages">
+                <a href="./portfolio.html" class="pages-link">Portfolio</a>
+              </li>
+              <li class="mobile-menu-pages">
+                <a href="#" class="pages-link">Contacts</a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <ul class="mobile-menu-contact">
+              <li class="mobile-menu-tel">
+                <a href="tel:+110001111111" class="mobile-menu-link mbl-mn-font"
+                  >+11 (000) 111-11-11</a
+                >
+              </li>
+              <li class="mobile-menu-tel">
+                <a
+                  href="mailto:info@devstudio.com"
+                  class="mobile-menu-link mbl-mn-size"
+                  >info@devstudio.com</a
+                >
+              </li>
+            </ul>
+            <ul class="mobile-socials">
+              <li class="mobile-menu-social-item">
+                <a href="" class="mobile-menu-social-link">
+                  <svg width="16" height="16">
+                    <use href="./images/icons.svg#icon-instagram"></use>
+                  </svg>
+                </a>
+              </li>
+              <li class="mobile-menu-social-item">
+                <a href="" class="mobile-menu-social-link">
+                  <svg width="16" height="16">
+                    <use href="./images/icons.svg#icon-twitter"></use></svg
+                ></a>
+              </li>
+              <li class="mobile-menu-social-item">
+                <a href="" class="mobile-menu-social-link">
+                  <svg width="16" height="16">
+                    <use href="./images/icons.svg#icon-facebook"></use>
+                  </svg>
+                </a>
+              </li>
+              <li class="mobile-menu-social-item">
+                <a href="" class="mobile-menu-social-link">
+                  <svg width="16" height="16">
+                    <use href="./images/icons.svg#icon-linkedin"></use></svg
+                ></a>
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
     </header>
 
     <!--Subtitle-->
 
     <section class="section main">
-      <div class="container">
+      <div class="container butons-flex">
         <h1 class="visually-hidden">Work examples</h1>
         <ul class="buttons">
           <li class="margin">
@@ -353,5 +427,8 @@
         </div>
       </div>
     </footer>
+    <script src="./js/modal.js"></script>
+
+    <script src="./js-mobile/mobilemenu.js"></script>
   </body>
 </html>
